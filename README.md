@@ -1,2 +1,2 @@
 # game
-A web game using HTML/CSS/JavaScript
+A web game for promoting code reading skills
