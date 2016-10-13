@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="CodeReadingDojo is a new and dun educationally-oriented game aimed at promoting code reading skils.">
-
-  <title>Virginia Tech | CodeReadingDojo</title>
-
-	<style type="text/css">
-	</style>
-
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-<h1>Virginia Tech | CodeReadingDojo</h1>
-
-<label for="show-menu" class="show-menu">Show Menu</label>
-<input type="checkbox" id="show-menu">
-<ul id="menu">
-	<li><a href="index.html">Home</a></li>
-	<li><a href="play.html">Play</a></li>
-	<li><a href="about.html">About</a></li>
-	<li><a href="contact.html">Contact</a></li>
-</ul>
 
 <h1 id="title">CodeReadingDojo</h1>
 <h3 class="sub-title">A new and fun way to find bugs!</h3>
@@ -65,13 +41,7 @@
   --or--
 </p>
 
-<img class="social-media" src="images/google.png" alt="CodeReadingDojo Logo" />
-<img class="social-media" src="images/facebook.png" alt="CodeReadingDojo Logo" />
+<img class="social-media" src="<?= BASE_URL ?>/public/img/google.png" alt="CodeReadingDojo Logo" />
+<img class="social-media" src="<?= BASE_URL ?>/public/img/facebook.png" alt="CodeReadingDojo Logo" />
 
 </div>
-
-<div id="footer">
-	<a href="home.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contat</a>
-</div>
-</body>
-</html>

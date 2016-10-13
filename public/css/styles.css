@@ -224,7 +224,7 @@ img.user-logo {
 .star-icon.full:before {
   text-shadow: 0 0 0px rgba(0,0,0,0.7);
   color: #FDE16D;
-  content: '\2605';  
+  content: '\2605';
   position: absolute;
   left: 0;
 }
@@ -381,4 +381,10 @@ img.user-logo {
 
 #footer a:hover {
   color: black;
+}
+
+#selected-nav:link,
+#selected-nav {
+  color: black;
+  background-color: maroon;
 }

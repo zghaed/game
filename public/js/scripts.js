@@ -17,7 +17,7 @@ $(document).ready(function(){
   		$('#code').html('<span>' + text + '</span>');
 
   		$('span').click(function ()
-  		{	
+  		{
   			var selectedWord = $(this).text();
   			var numOfErrors = errors.length;
   			var isError = false;
