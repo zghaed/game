@@ -29,7 +29,7 @@ function isSelected($pn, $link) {
 	<input type="checkbox" id="show-menu" value="button">
 	<ul id="menu">
 		<li><a <?= isSelected($pageName, 'Home') ?> href="<?= BASE_URL ?>/">Home</a></li>
-		<li><a <?= isSelected($pageName, 'Play') ?> href="<?= BASE_URL ?>/play/">Play</a></li>
+		<li><a <?= isSelected($pageName, 'Play') ?> href="<?= BASE_URL ?>/programs/">Play</a></li>
 		<li><a <?= isSelected($pageName, 'About') ?> href="<?= BASE_URL ?>/about/">About</a></li>
 		<li><a <?= isSelected($pageName, 'Contact') ?> href="<?= BASE_URL ?>/contact/">Contact</a></li>
 	</ul>
