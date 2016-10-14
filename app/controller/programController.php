@@ -44,7 +44,21 @@ class ProgramController {
 	}
 
   public function programs() {
+		// $pageName = 'Play';
+		// include_once SYSTEM_PATH.'/view/header.tpl';
+		// include_once SYSTEM_PATH.'/view/programs.tpl';
+		// include_once SYSTEM_PATH.'/view/footer.tpl';
 		$pageName = 'Play';
+
+		$p = Program::getAllPrograms();
+
+		// $conn = mysql_connect(DB_HOST, DB_USER, DB_PASS)
+		// 	or die ('Error: Could not connect to MySql database');
+		// mysql_select_db(DB_DATABASE);
+		//
+		// $q = "SELECT * FROM program ORDER BY id; ";
+		// $result = mysql_query($q);
+
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/programs.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';

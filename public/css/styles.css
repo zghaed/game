@@ -240,17 +240,17 @@ img.user-logo {
 /*Style for the six levels of beginner levels*/
 #beginner{
   text-align: center;
-  margin-left: 24%;
-  margin-right: 20%;
+
   margin-top: 10px;
+  display: inline-block;
+  width: 10%;
 }
 
-#beginner a{
+/*#beginner a{
   display: inline-block;
   text-decoration: none;
   width: 32%;
-/*  max-width: 100%;*/
-}
+}*/
 
 .caption {
   margin-bottom: 10%;
