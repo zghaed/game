@@ -26,10 +26,6 @@ class SiteController {
 				$this->Play();
 				break;
 
-			case 'level':
-				$this->Level();
-				break;
-
 			case 'about':
 				$this->about();
 				break;
@@ -75,13 +71,6 @@ class SiteController {
 		$pageName = 'Play';
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/play.tpl';
-		include_once SYSTEM_PATH.'/view/footer.tpl';
-  }
-
-	public function level() {
-		$pageName = 'Level';
-		include_once SYSTEM_PATH.'/view/header.tpl';
-		include_once SYSTEM_PATH.'/view/level.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';
   }
 

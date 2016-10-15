@@ -207,12 +207,7 @@ img.user-logo {
   padding-bottom: 10px;
 }
 
-#level-logo {
-  display: block;
-  margin-left: 45%;
-  width: 120px;
-  padding-bottom: 10px;
-}
+
 
 /*Make yellow stars for the score*/
 .star-icon {
@@ -229,7 +224,24 @@ img.user-logo {
   left: 0;
 }
 
-.level {
+
+/*Style for the six levels of beginner levels*/
+#beginner{
+  text-align: center;
+  margin-left: 24%;
+  margin-right: 20%;
+  margin-top: 10px;
+}
+
+.level{
+  display: inline-block;
+  text-decoration: none;
+  width: 32%;
+/*  max-width: 100%;*/
+}
+
+
+.level-logo {
   display: inline-block;
 /*  margin-left: 30%;
   margin-right: 30%;*/
@@ -237,20 +249,12 @@ img.user-logo {
   max-width: 100%;
 }
 
-/*Style for the six levels of beginner levels*/
-#beginner{
-  text-align: center;
-
-  margin-top: 10px;
-  display: inline-block;
-  width: 10%;
+#level-logo {
+  display: block;
+  margin-left: 45%;
+  width: 120px;
+  padding-bottom: 10px;
 }
-
-/*#beginner a{
-  display: inline-block;
-  text-decoration: none;
-  width: 32%;
-}*/
 
 .caption {
   margin-bottom: 10%;
@@ -352,7 +356,7 @@ img.user-logo {
     font-size: 10px;
   }
 
-  #level-logo{
+  .level-logo{
     margin-left: 40%;
     width: 80px;
   }

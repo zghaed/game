@@ -75,7 +75,7 @@ class Program extends DbObject {
 
     // load all programs
     public static function getAllPrograms($limit=null) {
-        $query = sprintf(" SELECT id FROM %s ORDER BY level DESC ",
+        $query = sprintf(" SELECT id FROM %s ORDER BY level ASC ",
             self::DB_TABLE
             );
 

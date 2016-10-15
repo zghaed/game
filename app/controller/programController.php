@@ -15,24 +15,22 @@ class ProgramController {
 	public function route($action) {
 		switch($action) {
 			case 'programs':
-        // $productType = $_GET['ptype'];
-        $this->programs();
-        // if($productType == 'beginner') {
-				//     $this->beginner();
-        // } elseif($productType == 'intermediate') {
-        //     $this->intermediate();
-        // } elseif($productType == 'advanced') {
-        //     $this->advanced();
-        // }
+				$this->programs();
 				break;
 
-			case 'program':
-        $productID = $_GET['pid'];
-				$this->program($programID);
+			case 'level':
+				$id = $_GET['pid'];
+				$this->level($id);
 				break;
 
-			case 'checkout':
-				$this->checkout();
+			case 'editProgram':
+				$level = $_GET['level'];
+				$this->editProgram($level);
+				break;
+
+			case 'editProgramProcess':
+				$level = $_GET['level'];
+				$this->editProgramProcess($level);
 				break;
 
       // redirect to home page if all else fails
@@ -44,73 +42,22 @@ class ProgramController {
 	}
 
   public function programs() {
-		// $pageName = 'Play';
-		// include_once SYSTEM_PATH.'/view/header.tpl';
-		// include_once SYSTEM_PATH.'/view/programs.tpl';
-		// include_once SYSTEM_PATH.'/view/footer.tpl';
 		$pageName = 'Play';
 
 		$p = Program::getAllPrograms();
-
-		// $conn = mysql_connect(DB_HOST, DB_USER, DB_PASS)
-		// 	or die ('Error: Could not connect to MySql database');
-		// mysql_select_db(DB_DATABASE);
-		//
-		// $q = "SELECT * FROM program ORDER BY id; ";
-		// $result = mysql_query($q);
 
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/programs.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';
   }
 
-  public function intermediate() {
-		$pageName = 'Intermediate';
+	public function level($id) {
+		$pageName = 'Level' + $id;
+
+		$p = Program::loadById($id);
 
 		include_once SYSTEM_PATH.'/view/header.tpl';
-		include_once SYSTEM_PATH.'/view/intermediate.tpl';
-		include_once SYSTEM_PATH.'/view/footer.tpl';
-  }
-
-  public function advanced() {
-		$pageName = 'Advanced';
-
-		include_once SYSTEM_PATH.'/view/header.tpl';
-		include_once SYSTEM_PATH.'/view/advanced.tpl';
-		include_once SYSTEM_PATH.'/view/footer.tpl';
-  }
-
-	public function checkout() {
-		$pageName = 'Checkout';
-		include_once SYSTEM_PATH.'/view/header.tpl';
-		include_once SYSTEM_PATH.'/view/checkout.tpl';
-		include_once SYSTEM_PATH.'/view/footer.tpl';
-  }
-
-	public function program($id) {
-		$pageName = 'Program';
-
-    $program = array();
-    switch($id) {
-      case 1: // maroon t-shirt
-        $program['imgURL'] = BASE_URL.'/public/img/tshirt.jpg';
-        $program['name'] = 'Maroon T-shirt';
-        $program['description'] = 'Some product description would go here.';
-        $program['sizes'] = 'Small';
-        $program['price'] = '$20';
-        break;
-
-      case 2: // football jersey
-        $product['imgURL'] = BASE_URL.'/public/img/jersey.jpg';
-        $product['name'] = 'Football Jersey';
-        $product['description'] = 'Some product description would go here.';
-        $product['sizes'] = 'Small, Medium';
-        $product['price'] = '$80';
-        break;
-    }
-
-		include_once SYSTEM_PATH.'/view/header.tpl';
-		include_once SYSTEM_PATH.'/view/product.tpl';
+		include_once SYSTEM_PATH.'/view/level.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';
   }
 
