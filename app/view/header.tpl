@@ -23,6 +23,22 @@ function isSelected($pn, $link) {
 
 	</head>
 	<body>
+
+	<?php
+
+	session_start();
+	if(isset($_SESSION['user'])) {
+		$url = BASE_URL.'/signout/';
+		echo '<a class="signin-signout" href="'.$url.'">Sign Out</a>';
+		echo '<p id="signed-in">Signed in as: '.$_SESSION['user'].'</p>';
+	}
+	else {
+		$url = BASE_URL.'/signin/';
+		echo '<a class="signin-signout" href="'.$url.'">Sign In</a>';
+	}
+
+	?>
+
 	<h1>Virginia Tech | CodeReadingDojo</h1>
 
 	<label for="show-menu" class="show-menu">Show Menu</label>

@@ -28,13 +28,11 @@
 <div class="content">
 
 <h2>Sign In</h2>
-
-<form class="signin" action="zahra-index.html" method="POST">
-
-<label>Username: <input type="text" name="first_name"></label>
-<label>Password: <input type="password" name="last_name"></label>
-<a id="forgot-password" href="#">Forgot password?</a>
-<input class="submit-button" type="submit" name="submit" value="Sign In">
+<form class="signin" action="<?= BASE_URL ?>/login/process" method="POST">
+	<label>Username: <input type="text" name="username"></label>
+	<label>Password: <input type="password" name="password"></label>
+	<a id="forgot-password" href="#">Forgot password?</a>
+	<input class="submit-button" type="submit" name="submit" value="Sign In">
 </form>
 
 <p>

@@ -22,6 +22,10 @@ class SiteController {
 				$this->signin();
 				break;
 
+			case 'signout':
+				$this->signout();
+				break;
+
 			case 'play':
 				$this->Play();
 				break;
@@ -39,8 +43,8 @@ class SiteController {
 				break;
 
 			case 'processLogin':
-				$username = $_POST['un'];
-				$password = $_POST['pw'];
+				$username = $_POST['username'];
+				$password = $_POST['password'];
 				$this->processLogin($username, $password);
 				break;
 
@@ -65,6 +69,13 @@ class SiteController {
 		include_once SYSTEM_PATH.'/view/header.tpl';
 		include_once SYSTEM_PATH.'/view/signin.tpl';
 		include_once SYSTEM_PATH.'/view/footer.tpl';
+  }
+
+	public function signout() {
+		session_start();
+		session_destroy();
+		header('Location: '.BASE_URL.'/programs/');
+		exit();
   }
 
 	public function play() {
@@ -104,12 +115,12 @@ class SiteController {
 			$_SESSION['user'] = $u;
 			header('Location: '.BASE_URL);
 			exit();
-		// 	echo 'Hooray! Access is granted.';
+		 	echo 'Hooray! Access is granted.';
 		// } else {
 		// 	echo 'Access denied.';
 		} else {
 			// send them back
-			header('Location: '.BASE_URL);
+			header('Location: '.BASE_URL.'/signin/');
 			exit();
 		}
 

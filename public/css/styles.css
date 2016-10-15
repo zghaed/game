@@ -33,6 +33,22 @@ h1 {
   color: black;
 }
 
+#signed-in {
+  float: right;
+  margin-top: 10px;
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  width: 10%;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /*signin.html sign in and sign up button*/
 .submit-button{
   background-color: #660000;
@@ -68,6 +84,36 @@ h1 {
 
 #start-button:hover {
   color: black;
+}
+
+#edit-button {
+  display: block;
+  width: 10%;
+  background-color: #660000;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10%;
+}
+
+.signin-signout {
+  margin-top: 10px;
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  width: 10%;
+  background-color: #660000;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10%;
 }
 
 /*Facebook and Google authentication button*/
@@ -207,8 +253,6 @@ img.user-logo {
   padding-bottom: 10px;
 }
 
-
-
 /*Make yellow stars for the score*/
 .star-icon {
   color: #ddd;
@@ -256,6 +300,12 @@ img.user-logo {
   padding-bottom: 10px;
 }
 
+#logo-edit {
+  display: block;
+  width: 120px;
+  padding-bottom: 10px;
+}
+
 .caption {
   margin-bottom: 10%;
 }
@@ -292,6 +342,25 @@ img.user-logo {
 
 #scores {
   margin-left: 10%;
+}
+
+#edit {
+  margin-left: 20%;
+}
+
+#edit-program input[type="text"] {
+  width: 200px;
+  display: block;
+}
+
+#edit-program textarea {
+  width: 300px;
+  height: 100px;
+  display: block;
+}
+
+#edit-program label{
+  margin-bottom: 20px;
 }
 
 #code{
@@ -365,6 +434,7 @@ img.user-logo {
     font-size: 10px;
   }
 
+  #edit-button,
   #start-button {
     font-size: 10px;
   }
@@ -390,5 +460,5 @@ img.user-logo {
 #selected-nav:link,
 #selected-nav {
   color: black;
-  background-color: maroon;
+  background-color: #660000;
 }
