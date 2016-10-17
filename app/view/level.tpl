@@ -1,13 +1,29 @@
 <h1 id="title">CodeReadingDojo</h1>
-<form action="<?= BASE_URL ?>/programs/edit/<?= $p->get('id') ?>" method="POST">
-<img id="level-logo" src="<?= BASE_URL.'/public/img/1/'.$p->get('logo_url') ?>" alt="" />
+
+<img id="level-logo" src="<?= BASE_URL.'/public/img/'.$p->get('logo_url') ?>" alt="" />
 <div id="scores">
 	<span id="first-score" class="star-icon">☆</span>
 	<span id="second-score" class="star-icon">☆</span>
 	<span id="third-score" class="star-icon">☆</span>
 	<h3><?= $p->get('title') ?></h3>
 	<h3>Level <?= $p->get('level') ?></h3>
-	<button type="submit" id="edit-button">Edit</button>
+	<?php
+	if(isset($_SESSION['user'])) {
+		if ($_SESSION['user'] == 'admin') {
+			$pid = $p->get('id');
+			$editUrl = BASE_URL.'/programs/edit/'.$pid;
+			$deleteUrl = BASE_URL.'/programs/delete/'.$pid;
+
+			echo '<form action="'.$editUrl.'" method="POST">
+				<button type="submit" id="edit-button">Edit</button>
+			</form>';
+
+			echo '<form action="'.$deleteUrl.'" method="POST" onsubmit="return confirm("Really Delete?");">
+				<button type="submit" id="delete-button">Delete</button>
+			</form>';
+		}
+	}
+	?>
 </div>
 
 <div id="code-content">
@@ -17,4 +33,3 @@
 </div>
 
 <button id="start-button">Start</button>
-</form>

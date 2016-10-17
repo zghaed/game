@@ -28,9 +28,9 @@ function isSelected($pn, $link) {
 
 	session_start();
 	if(isset($_SESSION['user'])) {
-		$url = BASE_URL.'/signout/';
-		echo '<a class="signin-signout" href="'.$url.'">Sign Out</a>';
-		echo '<p id="signed-in">Signed in as: '.$_SESSION['user'].'</p>';
+			$url = BASE_URL.'/signout/';
+			echo '<a class="signin-signout" href="'.$url.'">Sign Out</a>';
+			echo '<p id="signed-in">Signed in as: '.$_SESSION['user'].'</p>';
 	}
 	else {
 		$url = BASE_URL.'/signin/';

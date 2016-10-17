@@ -36,6 +36,34 @@ class User extends DbObject {
         $this->completedlevel = $args['completedlevel'];
     }
 
+    public function getId() {
+      return $this->id;
+    }
+
+    public function getUsername() {
+      return $this->username;
+    }
+
+    public function getPassword() {
+      return $this->password;
+    }
+
+    public function getFirstName() {
+      return $this->first_name;
+    }
+
+    public function getLastName() {
+      return $this->last_name;
+    }
+
+    public function getEmail() {
+      return $this->email;
+    }
+
+    public function getCompletedLevel() {
+      return $this->completedLevel;
+    }
+
     // save changes to object
     public function save() {
         $db = Db::instance();

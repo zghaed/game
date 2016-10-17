@@ -45,7 +45,7 @@ h1 {
   color: white;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -99,6 +99,35 @@ h1 {
   margin-right: 10%;
 }
 
+#delete-button {
+  display: inline-block;
+  width: 10%;
+  background-color: #660000;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#add-button {
+  display: block;
+  width: 10%;
+  background-color: #660000;
+  border: 0px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20%;
+}
+
 .signin-signout {
   margin-top: 10px;
   float: right;
@@ -107,7 +136,8 @@ h1 {
   display: block;
   width: 10%;
   background-color: #660000;
-  border: none;
+  border: 0px;
+  border-radius: 20px;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -270,7 +300,8 @@ img.user-logo {
 
 
 /*Style for the six levels of beginner levels*/
-#beginner{
+#programs{
+  clear: both;
   text-align: center;
   margin-left: 24%;
   margin-right: 20%;
@@ -364,6 +395,7 @@ img.user-logo {
 }
 
 #code{
+  clear: both;
   background-color: #c2c1ba;
   color: black;
   margin-left: 10%;
@@ -409,11 +441,6 @@ img.user-logo {
 
   h3 {
     font-size: 12px;
-  }
-
-  img.product-image {
-    float: none;
-    display: block;
   }
 
   #title {

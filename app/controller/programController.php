@@ -23,6 +23,14 @@ class ProgramController {
 				$this->level($id);
 				break;
 
+			case 'addProgram':
+				$this->addProgram();
+				break;
+
+			case 'addProgramProcess':
+				$this->addProgramProcess();
+				break;
+
 			case 'editProgram':
 				$id = $_GET['pid'];
 				$this->editProgram($id);
@@ -33,7 +41,11 @@ class ProgramController {
 				$this->editProgramProcess($id);
 				break;
 
-      // redirect to home page if all else fails
+			case 'deleteProgram':
+				$id = $_GET['pid'];
+				$this->deleteProgram($id);
+				break;
+
       default:
         header('Location: '.BASE_URL);
         exit();
@@ -61,8 +73,39 @@ class ProgramController {
 		include_once SYSTEM_PATH.'/view/footer.tpl';
   }
 
+	public function addProgram() {
+		$pageName = 'Add Program';
+
+		include_once SYSTEM_PATH.'/view/header.tpl';
+		include_once SYSTEM_PATH.'/view/addProgram.tpl';
+		include_once SYSTEM_PATH.'/view/footer.tpl';
+  }
+
+	public function addProgramProcess() {
+		$title = $_POST['title'];
+		$code = $_POST['code'];
+		$level = $_POST['level'];
+		$logo_url = $_POST['logo_url'];
+		session_start();
+		$creator_username = $_SESSION['user'];
+		$creator = User::loadByUsername($creator_username);
+		$creator_id = $creator->getId();
+		$newProgram = new Program(
+			array(
+				'title' => $title,
+				'code' => $code,
+				'level' => $level,
+				'logo_url' => $logo_url,
+				'creator_id' => $creator_id
+			)
+		);
+		$newProgram->save();
+		$_SESSION['msg'] = "You added the program called ".$title;
+		header('Location: '.BASE_URL.'/programs/');
+	}
+
 	public function editProgram($id) {
-		$pageName = 'Program';
+		$pageName = 'Edit Program';
 
 		$p = Program::loadById($id);
 
@@ -77,18 +120,6 @@ class ProgramController {
 		$level = $_POST['level'];
 		$logo_url = $_POST['logo_url'];
 
-
-		// create program
-		// $newProgram = new Program(
-		// 	array(
-		// 		'title' => 'Sweatshirt',
-		// 		'code' => 'A great sweatshirt',
-		// 		'level' => 25,
-		// 		'creator_id' => 1
-		// 	)
-		// );
-		// $newProgram->save();
-
 		$p = Program::loadById($id);
 		$p->set('title', $title);
 		$p->set('code', $code);
@@ -100,4 +131,10 @@ class ProgramController {
 		$_SESSION['msg'] = "You edited the program called ".$title;
 		header('Location: '.BASE_URL.'/programs/level/'.$id);
 	}
+
+	public function deleteProgram($id) {
+		$pageName = 'Delete Program';
+
+		$p = Program::deleteById($id);
+  }
 }

@@ -19,7 +19,7 @@ class Program extends DbObject {
             'title' => '',
             'code' => null,
             'level' => 0,
-            'logo_url' => null,
+            'logo_url' => 'Logo_02.png',
             'creator_id' => 0
             );
 
@@ -95,4 +95,14 @@ class Program extends DbObject {
         }
     }
 
+    public static function deleteById($id) {
+      $query = sprintf(" DELETE FROM %s WHERE id=$id",
+          self::DB_TABLE
+          );
+
+      $db = Db::instance();
+
+      $db->lookup($query);
+      header('Location: '.BASE_URL.'/programs/');
+    }
 }

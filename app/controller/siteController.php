@@ -74,7 +74,7 @@ class SiteController {
 	public function signout() {
 		session_start();
 		session_destroy();
-		header('Location: '.BASE_URL.'/programs/');
+		header('Location: '.BASE_URL);
 		exit();
   }
 
@@ -108,12 +108,13 @@ class SiteController {
   }
 
 	public function processLogin($u, $p) {
-		$adminUsername = 'foo';
-		$adminPassword = 'bar';
-		if(($u == $adminUsername) && ($p == $adminPassword)) {
+		$user = User::loadByUsername($u);
+		$username = $user->getUsername();
+		$password = $user->getPassword();
+		if(($u == $username) && ($p == $password)) {
 			session_start();
 			$_SESSION['user'] = $u;
-			header('Location: '.BASE_URL);
+			header('Location: '.BASE_URL.'/programs/');
 			exit();
 		 	echo 'Hooray! Access is granted.';
 		// } else {

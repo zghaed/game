@@ -67,5 +67,16 @@ $(document).ready(function(){
 
 	});
 
+	$("#delete-button").click(function() {
+
+		if(!confirm('Are You Sure To Remove This Program?'))
+     {
+      return false;
+     }
+		 else {
+			 return true;
+		 }
+	});
+
 
 });
